@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <display-name>ClinicPet</display-name>
+    <description>
+        This is a simple web application with a source code organization
+        based on the recommendations of the Application Developer's Guide.
+    </description>
+
+
+    <servlet>
+        <servlet-name>StartPageServlet</servlet-name>
+        <servlet-class>ru.servlets.StartPageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StartPageServlet</servlet-name>
+        <url-pattern>/start</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CreateClientServlet</servlet-name>
+        <servlet-class>ru.servlets.CreateClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateClientServlet</servlet-name>
+        <url-pattern>/clients/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowClientsServlet</servlet-name>
+        <servlet-class>ru.servlets.ShowClientsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowClientsServlet</servlet-name>
+        <url-pattern>/clients</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddCarServlet</servlet-name>
+        <servlet-class>ru.servlets.AddCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCarServlet</servlet-name>
+        <url-pattern>/clients/add</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>EditClientServlet</servlet-name>
+        <servlet-class>ru.servlets.EditClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditClientServlet</servlet-name>
+        <url-pattern>/clients/edit</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DeleteClientServlet</servlet-name>
+        <servlet-class>ru.servlets.DeleteClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteClientServlet</servlet-name>
+        <url-pattern>/clients/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteCarServlet</servlet-name>
+        <servlet-class>ru.servlets.DeleteCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCarServlet</servlet-name>
+        <url-pattern>/car/delete</url-pattern>
+    </servlet-mapping>
+
+</web-app>
