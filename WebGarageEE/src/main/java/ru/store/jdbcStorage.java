@@ -25,7 +25,7 @@ public class jdbcStorage implements Storage {
     public Collection<Client> values() {
         final List<Client> clients = new ArrayList<>();
         try(final Statement statement= this.connection.createStatement();
-            final ResultSet resultSet = statement.executeQuery("select * from client")){
+            final ResultSet resultSet = statement.executeQuery("select * from clients")){
             while (resultSet.next()){
                 clients.add(new Client(resultSet.getInt("uid"), resultSet.getString("name"), null));
             }
@@ -37,7 +37,7 @@ public class jdbcStorage implements Storage {
 
     @Override
     public int add(Client client) {
-        try(final PreparedStatement statement = this.connection.prepareStatement("insert into client (name) values (?)", Statement.RETURN_GENERATED_KEYS)){
+        try(final PreparedStatement statement = this.connection.prepareStatement("insert into clients (name) values (?)", Statement.RETURN_GENERATED_KEYS)){
             statement.setString(1, client.getName());
             statement.executeUpdate();
             try( ResultSet generatedKeys = statement.getGeneratedKeys()){
@@ -63,7 +63,17 @@ public class jdbcStorage implements Storage {
 
     @Override
     public Client get(int id) {
-        return null;
+        try(final PreparedStatement statement = this.connection.prepareStatement("select * from clients where uid=(?)")) {
+            statement.setInt(1, id);
+            try (final ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    return new Client(resultSet.getInt("uid"), resultSet.getString("name"), null);
+                }
+            }
+        }catch (SQLException exc){
+            exc.printStackTrace();
+        }
+        throw new IllegalStateException(String.format("Client %s does't exist"));
     }
 
     @Override
@@ -78,6 +88,11 @@ public class jdbcStorage implements Storage {
 
     @Override
     public void close() {
+        try{
+            connection.close();
+        }catch (SQLException exc){
+            exc.printStackTrace();
+        }
 
     }
 }
