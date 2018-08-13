@@ -30,7 +30,7 @@ public class AddCarServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CLIENT.get(Integer.valueOf(req.getParameter("id"))).addCar(new Car(Integer.valueOf(req.getParameter("idCar")),req.getParameter("car")));
+       // CLIENT.get(Integer.valueOf(req.getParameter("id"))).addCar(new Car(Integer.valueOf(req.getParameter("idCar")),req.getParameter("car")));
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/clients"));
     }
 }

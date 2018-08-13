@@ -3,8 +3,6 @@ package ru.store;
 import ru.Garage.Client.Client;
 import ru.Garage.car.Car;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.concurrent.ConcurrentHashMap;
@@ -55,11 +53,7 @@ public class ClientCache implements Storage {
 
     }
 
-    public Client getAll (){
-        for (Client c : CLIENT_CAHE.values())
-            return c;
-            return new Client(0,"",new LinkedList<Car>());
-    }
+
 
 
 

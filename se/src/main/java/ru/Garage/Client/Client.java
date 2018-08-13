@@ -2,38 +2,72 @@ package ru.Garage.Client;
 
 import ru.Garage.car.Car;
 
-import java.util.Collection;
+import java.util.*;
 
 // name - client name
 // id -unique client number
 // Car - his car
 
 public class Client {
-    private String name;
+    private String firstname;
+    private String lastname;
     private int id;
-    private Collection<Car> car;
+    private int age;
+    private String telephone;
+    private String sity;
+    private Car car;
 
-    public Client(int id, String name, Collection<Car> car) {
-        this.name = name;
+    public Client(){
+
+    }
+
+    public Client(int id, String firstname, String lastname,  int age, String telephone, String sity, Car car) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.id = id;
+        this.age = age;
+        this.telephone = telephone;
+        this.sity = sity;
         this.car = car;
     }
 
-    public String getName() {
-        return name;
+    public int getAge() {
+        return age;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public String getSity() {
+        return sity;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
     }
 
     public int getId() {
         return id;
     }
 
+/*
     public void addCar(Car car) {
         this.car.add(car);
     }
+*/
 
-    public Collection<Car> getCars (){
+
+    public Car getCars (){
         return this.car;
     }
+
+
+
 
 
 }

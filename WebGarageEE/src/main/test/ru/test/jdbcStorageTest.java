@@ -12,7 +12,7 @@ public class jdbcStorageTest {
     @Test
     public void testCreate() throws Exception{
         final jdbcStorage storage = new jdbcStorage();
-        final int id = storage.add(new Client(-1,"test", null));
+        final int id = storage.add(new Client(-1,"test", "name", 30, "23131231", "Moscow", null));
         final Client client = storage.get(id);
         assertEquals(id, client.getId());
         storage.close();
