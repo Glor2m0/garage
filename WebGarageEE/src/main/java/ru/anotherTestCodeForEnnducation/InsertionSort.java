@@ -1,7 +1,7 @@
 package ru.anotherTestCodeForEnnducation;
 
 public class InsertionSort {
-
+//сортировака вставками
     void insertionSort (int[] a, int length){
 
         for(int i=0; i<length; i++){
