@@ -1,5 +1,7 @@
 package ru.anotherTestCodeForEnnducation;
 
+import java.util.Arrays;
+
 public class RunnerTestClass {
 
     public static void main(String[] args) {
@@ -12,8 +14,9 @@ public class RunnerTestClass {
         String sa;
         sa = Long.toString(a);
         b = Character.getNumericValue(sa.charAt(0));
-        if (re =="0123456")
-       System.out.println(re.substring(1,4));
+        //if (re.charAt(1) == 2)
+       System.out.println(re);
+        Arrays.sort(ssa);
 
 
 
