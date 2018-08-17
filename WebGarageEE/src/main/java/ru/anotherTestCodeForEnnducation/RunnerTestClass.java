@@ -1,6 +1,7 @@
 package ru.anotherTestCodeForEnnducation;
 
-import java.util.Arrays;
+    import java.util.ArrayList;
+    import java.util.Arrays;
 
 public class RunnerTestClass {
 
@@ -20,6 +21,10 @@ public class RunnerTestClass {
         //Arrays.sort(ssa);
         if (re.length() == re.toLowerCase().chars().distinct().count()) System.out.println(re.chars().distinct().count());
         System.out.print((5 / 2) + 1);
+
+        int[] aw = new int[3];
+        Arrays.sort(aw);
+        ArrayList<Integer> sw = new ArrayList<>();
 
 
     }
