@@ -21,11 +21,12 @@ public class UserEmailAndPassStorage  {
         }
     }
 
-   public int add (String email, String pass){
+   public int add (String email, String pass, int hashuid){
         try (final PreparedStatement statement = this.connection.prepareStatement(
-                "insert into baselp (user_email, user_pass) values (?,?)", Statement.RETURN_GENERATED_KEYS)){
-            statement.setString(1, email);
-            statement.setString(2, pass);
+                "insert into hashbase ( hashuid, user_email, user_pass) values (?,?,?)", Statement.RETURN_GENERATED_KEYS)){
+            statement.setInt(1, hashuid);
+            statement.setString(2, email);
+            statement.setString(3, pass);
             statement.executeUpdate();
             try(ResultSet generatedKeys = statement.getGeneratedKeys()){
                 if (generatedKeys.next()){
