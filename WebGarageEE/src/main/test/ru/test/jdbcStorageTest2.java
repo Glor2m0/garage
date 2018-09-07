@@ -39,7 +39,8 @@ public class jdbcStorageTest2 implements Storage {
 
     @Override
     public int add(Client client) {
-        try(final PreparedStatement statement = this.connection.prepareStatement("insert into client (firstname, lastname, age, telephone, city) values (?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS)){
+        try(final PreparedStatement statement = this.connection.prepareStatement(
+                "insert into client (firstname, lastname, age, telephone, city) values (?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS)){
             statement.setString(1, client.getFirstname());
             statement.setString(2, client.getLastname());
             statement.setInt(3, client.getAge());
