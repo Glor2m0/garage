@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class UserEmailAndPassStorage  {
-
+    //Z project
     final Connection connection;
 
     public UserEmailAndPassStorage() {
